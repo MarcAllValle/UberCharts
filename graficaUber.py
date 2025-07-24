@@ -40,12 +40,6 @@ df_tipo = pd.DataFrame({
     "Hojas": [652, 390, 5535, 572, 864, 2260, 1173, 15675, 1113, 14]
 })
 
-# --- Mostrar tablas ---
-st.subheader("📋 Resumen General")
-st.dataframe(df_general)
-
-st.subheader("📋 Detalle por Tipo de Documento")
-st.dataframe(df_tipo)
 
 # --- Función para crear gráficos ---l
 def crear_graficos():
