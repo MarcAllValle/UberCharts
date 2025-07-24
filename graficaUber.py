@@ -18,8 +18,8 @@ df_general = pd.DataFrame({
         "Documentos categorizados (batch)",
         "Diferencia (Hojas blancas)"
     ],
-    "Documentos": [897, 206, 691, 8344, 0],
-    "Hojas": [63747, 13342, 50405, 27121, 23284]
+    "Documentos": [1240, 466, 774, 9164, 0],
+    "Hojas": [79705, 25906, 53799, 30290, 23509]
 })
 
 # --- Datos por tipo de documento actualizados ---
@@ -33,9 +33,11 @@ df_tipo = pd.DataFrame({
         "Polizas de Banorte",
         "Poliza de AMEX",
         "Polizas de Transferencias",
+        "Poliza Tarjeta Amex",
+        "Polizas de Nomina"
     ],
-    "Documentos": [73, 73, 1728, 50, 486, 396, 57, 5597],
-    "Hojas": [652, 390, 5535, 572, 864, 2260, 1173, 15675]
+    "Documentos": [73, 73, 1728, 50, 486, 396, 57, 5597, 5, 3],
+    "Hojas": [652, 390, 5535, 572, 864, 2260, 1173, 15675, 1113, 14]
 })
 
 # --- Mostrar tablas ---
@@ -51,6 +53,16 @@ def crear_graficos():
 
     color_documentos = '#87CEEB'
     color_hojas = '#F08080'
+
+     # Tabla 1: df_general como figura
+    fig3, ax3 = plt.subplots(figsize=(10, 2))
+    ax3.axis('off')
+    tabla1 = ax3.table(cellText=df_general.values, colLabels=df_general.columns, loc='center', cellLoc='center')
+    tabla1.scale(1, 1.5)
+    tabla1.auto_set_font_size(False)
+    tabla1.set_fontsize(10)
+    fig3.suptitle("📋 Tabla: Resumen General", fontsize=12)
+    figs.append(fig3)
 
     # Gráfico 1: General
     fig1, ax1 = plt.subplots(figsize=(10, 5))
@@ -68,6 +80,16 @@ def crear_graficos():
     ax1.bar_label(hoja_bars, padding=3)
     figs.append(fig1)
 
+    # Tabla 2: df_tipo como figura
+    fig4, ax4 = plt.subplots(figsize=(10, 4))
+    ax4.axis('off')
+    tabla2 = ax4.table(cellText=df_tipo.values, colLabels=df_tipo.columns, loc='center', cellLoc='center')
+    tabla2.scale(1, 1.5)
+    tabla2.auto_set_font_size(False)
+    tabla2.set_fontsize(10)
+    fig4.suptitle("📋 Tabla: Documentos por Tipo \n", fontsize=12)
+    figs.append(fig4)
+
     # Gráfico 2: Por tipo
     fig2, ax2 = plt.subplots(figsize=(10, 5))
     x2 = np.arange(len(df_tipo))
@@ -83,25 +105,7 @@ def crear_graficos():
     ax2.bar_label(hoja_bars2, padding=3)
     figs.append(fig2)
 
-    # Tabla 1: df_general como figura
-    fig3, ax3 = plt.subplots(figsize=(10, 2))
-    ax3.axis('off')
-    tabla1 = ax3.table(cellText=df_general.values, colLabels=df_general.columns, loc='center', cellLoc='center')
-    tabla1.scale(1, 1.5)
-    tabla1.auto_set_font_size(False)
-    tabla1.set_fontsize(10)
-    fig3.suptitle("📋 Tabla: Resumen General", fontsize=12)
-    figs.append(fig3)
-
-    # Tabla 2: df_tipo como figura
-    fig4, ax4 = plt.subplots(figsize=(10, 3))
-    ax4.axis('off')
-    tabla2 = ax4.table(cellText=df_tipo.values, colLabels=df_tipo.columns, loc='center', cellLoc='center')
-    tabla2.scale(1, 1.5)
-    tabla2.auto_set_font_size(False)
-    tabla2.set_fontsize(10)
-    fig4.suptitle("📋 Tabla: Documentos por Tipo", fontsize=12)
-    figs.append(fig4)
+   
 
     return figs
 
