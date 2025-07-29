@@ -18,11 +18,10 @@ df_general = pd.DataFrame({
         "Documentos categorizados (batch)",
         "Diferencia (Hojas blancas)"
     ],
-    "Documentos": [1240, 466, 774, 9164, 0],
-    "Hojas": [79705, 25906, 53799, 30290, 23509]
+    "Documentos": [1359, 319, 1040, 10367, 0],
+    "Hojas": [84949, 26602, 58347, 37218, 21129]
 })
 
-# --- Datos por tipo de documento actualizados ---
 df_tipo = pd.DataFrame({
     "Tipo de Documento": [
         "Auxiliar de Mayor",
@@ -31,14 +30,15 @@ df_tipo = pd.DataFrame({
         "Polizas de Egreso",
         "Polizas de Ingreso",
         "Polizas de Banorte",
-        "Poliza de AMEX",
-        "Polizas de Transferencias",
         "Poliza Tarjeta Amex",
-        "Polizas de Nomina"
+        "Poliza de AMEX",
+        "Polizas de Nomina",
+        "Polizas de Transferencias"
     ],
-    "Documentos": [73, 73, 1728, 50, 486, 396, 57, 5597, 5, 3],
-    "Hojas": [652, 390, 5535, 572, 864, 2260, 1173, 15675, 1113, 14]
+    "Documentos": [129, 377, 1932, 56, 562, 396, 8, 57, 4, 6846],
+    "Hojas": [884, 6270, 6177, 595, 1130, 2260, 1230, 1173, 47, 17452]
 })
+
 
 
 # --- Función para crear gráficos ---l
@@ -55,7 +55,7 @@ def crear_graficos():
     tabla1.scale(1, 1.5)
     tabla1.auto_set_font_size(False)
     tabla1.set_fontsize(10)
-    fig3.suptitle("📋 Tabla: Resumen General", fontsize=12)
+    fig3.suptitle("Tabla: Resumen General", fontsize=12)
     figs.append(fig3)
 
     # Gráfico 1: General
@@ -81,7 +81,7 @@ def crear_graficos():
     tabla2.scale(1, 1.5)
     tabla2.auto_set_font_size(False)
     tabla2.set_fontsize(10)
-    fig4.suptitle("📋 Tabla: Documentos por Tipo \n", fontsize=12)
+    fig4.suptitle("Tabla: Documentos por Tipo \n", fontsize=12)
     figs.append(fig4)
 
     # Gráfico 2: Por tipo
