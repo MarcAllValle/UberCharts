@@ -75,14 +75,14 @@ def crear_graficos():
     figs.append(fig1)
 
     # Tabla 2: df_tipo como figura
-    fig4, ax4 = plt.subplots(figsize=(10, 4))
-    ax4.axis('off')
-    tabla2 = ax4.table(cellText=df_tipo.values, colLabels=df_tipo.columns, loc='center', cellLoc='center')
-    tabla2.scale(1, 1.5)
-    tabla2.auto_set_font_size(False)
-    tabla2.set_fontsize(10)
-    fig4.suptitle("Tabla: Documentos por Tipo \n", fontsize=12)
-    figs.append(fig4)
+    # fig4, ax4 = plt.subplots(figsize=(10, 4))
+    # ax4.axis('off')
+    # tabla2 = ax4.table(cellText=df_tipo.values, colLabels=df_tipo.columns, loc='center', cellLoc='center')
+    # tabla2.scale(1, 1.5)
+    # tabla2.auto_set_font_size(False)
+    # tabla2.set_fontsize(10)
+    # fig4.suptitle("Tabla: Documentos por Tipo \n", fontsize=12)
+    # figs.append(fig4)
 
     # # Gráfico 2: Por tipo
     # fig2, ax2 = plt.subplots(figsize=(10, 5))
