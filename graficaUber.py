@@ -12,14 +12,13 @@ st.title("📊 Comparación de Documentos y Hojas")
 # --- Datos generales actualizados ---
 df_general = pd.DataFrame({
     "Categoría": [
-        "Documentos",
-        "Documentos a procesar",
+        "Documentos Total",
         "Documentos procesados",
-        "Documentos categorizados (batch)",
-        "Diferencia (Hojas blancas)"
+        "Documentos categorizados (batch)", 
+        "Diferencia (Imagenes blancas)"
     ],
-    "Documentos": [1496, 0, 1496, 10773, 0],
-    "Hojas": [90397, 0, 90397, 52074, 38323]
+    "Documentos": [1496, 1496,],
+    "Imagenes": [90397, 90397, 52074, 38323]
 })
 
 # df_tipo = pd.DataFrame({
@@ -63,8 +62,8 @@ def crear_graficos():
     x = np.arange(len(df_general))
     ancho = 0.35
     doc_bars = ax1.bar(x - ancho/2, df_general['Documentos'], width=ancho, label='Documentos', color=color_documentos)
-    hoja_bars = ax1.bar(x + ancho/2, df_general['Hojas'], width=ancho, label='Hojas', color=color_hojas)
-    ax1.set_title("Resumen general de documentos y hojas")
+    hoja_bars = ax1.bar(x + ancho/2, df_general['Imagenes'], width=ancho, label='Hojas', color=color_hojas)
+    ax1.set_title("Resumen general de documentos e imagenes")
     ax1.set_xticks(x)
     ax1.set_xticklabels(df_general['Categoría'], rotation=45, ha='right')
     ax1.set_ylabel("Cantidad")
