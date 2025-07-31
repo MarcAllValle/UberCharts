@@ -19,7 +19,7 @@ df_general = pd.DataFrame({
         "Diferencia (Hojas blancas)"
     ],
     "Documentos": [1496, 0, 1496, 10773, 0],
-    "Hojas": [90397, 0, 90397, 42767, 47630]
+    "Hojas": [90397, 0, 90397, 52074, 38323]
 })
 
 # df_tipo = pd.DataFrame({
