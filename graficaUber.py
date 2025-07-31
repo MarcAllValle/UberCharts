@@ -18,26 +18,26 @@ df_general = pd.DataFrame({
         "Documentos categorizados (batch)",
         "Diferencia (Hojas blancas)"
     ],
-    "Documentos": [1359, 319, 1040, 10367, 0],
-    "Hojas": [84949, 26602, 58347, 37218, 21129]
+    "Documentos": [1496, 0, 1496, 10773, 0],
+    "Hojas": [90397, 0, 90397, 42767, 47630]
 })
 
-df_tipo = pd.DataFrame({
-    "Tipo de Documento": [
-        "Auxiliar de Mayor",
-        "Otros",
-        "Polizas de Diario",
-        "Polizas de Egreso",
-        "Polizas de Ingreso",
-        "Polizas de Banorte",
-        "Poliza Tarjeta Amex",
-        "Poliza de AMEX",
-        "Polizas de Nomina",
-        "Polizas de Transferencias"
-    ],
-    "Documentos": [129, 377, 1932, 56, 562, 396, 8, 57, 4, 6846],
-    "Hojas": [884, 6270, 6177, 595, 1130, 2260, 1230, 1173, 47, 17452]
-})
+# df_tipo = pd.DataFrame({
+#     "Tipo de Documento": [
+#         "Auxiliar de Mayor",
+#         "Otros",
+#         "Polizas de Diario",
+#         "Polizas de Egreso",
+#         "Polizas de Ingreso",
+#         "Polizas de Banorte",
+#         "Poliza Tarjeta Amex",
+#         "Poliza de AMEX",
+#         "Polizas de Nomina",
+#         "Polizas de Transferencias"
+#     ],
+#     "Documentos": [129, 377, 1932, 56, 562, 396, 8, 57, 4, 6846],
+#     "Hojas": [884, 6270, 6177, 595, 1130, 2260, 1230, 1173, 47, 17452]
+# })
 
 
 
@@ -84,20 +84,20 @@ def crear_graficos():
     fig4.suptitle("Tabla: Documentos por Tipo \n", fontsize=12)
     figs.append(fig4)
 
-    # Gráfico 2: Por tipo
-    fig2, ax2 = plt.subplots(figsize=(10, 5))
-    x2 = np.arange(len(df_tipo))
-    doc_bars2 = ax2.bar(x2 - ancho/2, df_tipo['Documentos'], width=ancho, label='Documentos', color=color_documentos)
-    hoja_bars2 = ax2.bar(x2 + ancho/2, df_tipo['Hojas'], width=ancho, label='Hojas', color=color_hojas)
-    ax2.set_title("Documentos y hojas por tipo de documento")
-    ax2.set_xticks(x2)
-    ax2.set_xticklabels(df_tipo['Tipo de Documento'], rotation=45, ha='right')
-    ax2.set_ylabel("Cantidad")
-    ax2.legend()
-    ax2.grid(axis='y', linestyle='--', alpha=0.7)
-    ax2.bar_label(doc_bars2, padding=3)
-    ax2.bar_label(hoja_bars2, padding=3)
-    figs.append(fig2)
+    # # Gráfico 2: Por tipo
+    # fig2, ax2 = plt.subplots(figsize=(10, 5))
+    # x2 = np.arange(len(df_tipo))
+    # doc_bars2 = ax2.bar(x2 - ancho/2, df_tipo['Documentos'], width=ancho, label='Documentos', color=color_documentos)
+    # hoja_bars2 = ax2.bar(x2 + ancho/2, df_tipo['Hojas'], width=ancho, label='Hojas', color=color_hojas)
+    # ax2.set_title("Documentos y hojas por tipo de documento")
+    # ax2.set_xticks(x2)
+    # ax2.set_xticklabels(df_tipo['Tipo de Documento'], rotation=45, ha='right')
+    # ax2.set_ylabel("Cantidad")
+    # ax2.legend()
+    # ax2.grid(axis='y', linestyle='--', alpha=0.7)
+    # ax2.bar_label(doc_bars2, padding=3)
+    # ax2.bar_label(hoja_bars2, padding=3)
+    # figs.append(fig2)
 
    
 
